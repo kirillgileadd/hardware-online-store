@@ -1,10 +1,12 @@
-import React, {FC} from 'react';
-import {Routes, Route} from 'react-router-dom'
-import {privateRoutes, publicRoutes} from "../routes";
-import Shop from "../pages/Shop";
+import React, {FC, useContext} from 'react';
+import {Navigate, Route, Routes} from 'react-router-dom'
+import {privateRoutes, publicRoutes, RouteName} from "../routes";
+import {Context, ContextInterface} from "../index";
 
 const AppRouter: FC = () => {
     const isAuth = false
+    const {user} = useContext(Context) as ContextInterface
+
 
     return (
         <Routes>
@@ -14,7 +16,7 @@ const AppRouter: FC = () => {
             {isAuth && privateRoutes.map(({path, element}) =>
                 <Route key={path} path={path} element={element}/>
             )}
-            <Route path='*' element={<Shop/>}/>
+            <Route path='*' element={<Navigate to={RouteName.SHOP}/>}/>
         </Routes>
     );
 };
