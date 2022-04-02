@@ -12,7 +12,7 @@ export interface IRoute {
 
 export enum RouteName {
     ADMIN = '/admin',
-    DEVICE_PAGE = '/device/:id',
+    DEVICE_PAGE = '/device',
     SHOP = '/',
     AUTH = '/auth',
     REGISTRATION = '/registration',
@@ -21,7 +21,7 @@ export enum RouteName {
 
 export const publicRoutes: IRoute[] = [
     {path: RouteName.SHOP, element: <Shop/>},
-    {path: RouteName.DEVICE_PAGE, element: <DevicePage/>},
+    {path: RouteName.DEVICE_PAGE + '/:id', element: <DevicePage/>},
     {path: RouteName.AUTH, element: <Auth/>},
     {path: RouteName.REGISTRATION, element: <Auth/>},
     {path: RouteName.BASKET, element: <Basket/>},
