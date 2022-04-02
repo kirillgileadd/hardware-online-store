@@ -6,6 +6,9 @@ import styled from "styled-components";
 const StyledNavLink = styled(NavLink)`
   color: inherit;
   text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
 `
 const MyNavLink: FC<NavLinkProps> = (props) => {
     return <StyledNavLink {...props} >{props.children}</StyledNavLink>

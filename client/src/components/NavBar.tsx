@@ -4,8 +4,10 @@ import MyNavLink from "./UI/MyNavLink";
 import {Context, ContextInterface} from "../index";
 import {RouteName} from "../routes";
 import {observer} from "mobx-react-lite";
+import {useNavigate} from "react-router-dom";
 
 const NavBar: FC = observer(() => {
+    const navigate = useNavigate()
     const {user} = useContext(Context) as ContextInterface
     return (
         <>
@@ -21,7 +23,7 @@ const NavBar: FC = observer(() => {
                         </Nav>
                         :
                         <Nav className="ml-auto">
-                            <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Login</Button>
+                            <Button onClick={() => navigate("/auth", { replace: true })} variant={"outline-light"}>Login</Button>
                         </Nav>
                     }
                 </Container>

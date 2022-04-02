@@ -15,6 +15,7 @@ export enum RouteName {
     DEVICE_PAGE = '/device/:id',
     SHOP = '/',
     AUTH = '/auth',
+    REGISTRATION = '/registration',
     BASKET = '/basket'
 }
 
@@ -22,6 +23,7 @@ export const publicRoutes: IRoute[] = [
     {path: RouteName.SHOP, element: <Shop/>},
     {path: RouteName.DEVICE_PAGE, element: <DevicePage/>},
     {path: RouteName.AUTH, element: <Auth/>},
+    {path: RouteName.REGISTRATION, element: <Auth/>},
     {path: RouteName.BASKET, element: <Basket/>},
 ]
 
